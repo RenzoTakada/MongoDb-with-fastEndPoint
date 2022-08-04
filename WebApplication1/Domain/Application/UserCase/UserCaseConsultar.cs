@@ -23,9 +23,10 @@ namespace Domain.Application.UserCase
 
         public async Task<DadosContaResponse> USCConsultar(DadosContaRequest request)
         {
-            var RepositoryMongo = _mongoService.GetConsultar(request);
+            var dadosconta = _mongoService.GetConsultar(request);
+            var empresanome = _mongoService.GetNomes(request);
 
-            var resultMap = MapConsultar.MappingConsulta(RepositoryMongo.Result);
+            var resultMap = MapConsultar.MappingConsulta(dadosconta.Result, empresanome.Result);
             return resultMap;
 
         }

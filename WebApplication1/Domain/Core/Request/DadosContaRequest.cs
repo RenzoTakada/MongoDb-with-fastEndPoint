@@ -4,6 +4,8 @@
     {
         public int Agencia { get; set; }
         public int NumeroConta { get; set; }
+        public string empresa { get; set; }
+
 
     }
 }

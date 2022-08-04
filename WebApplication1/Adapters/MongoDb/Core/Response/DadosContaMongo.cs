@@ -6,17 +6,18 @@ namespace Adapters.MongoDb.Core.Response
     public record DadosContaMongo
     {
         [BsonId]
-        public Guid id { get; set; }
-        [BsonElement("NumeroConta")]
+        [BsonRepresentation(MongoDB.Bson.BsonType.ObjectId)]
+        public string? id { get; set; }
+        [BsonElement("numeroConta")]
         public int NumeroConta { get; set; }
-        [BsonElement("Agencia")]
+        [BsonElement("agencia")]
         public int Agencia { get; set; }
 
         [BsonElement("nomeCliente")]
         public string nomeCliente { get; set; }
-        [BsonElement("Saldo")]
+        [BsonElement("saldo")]
         public double Saldo { get; set; }
-        [BsonElement("DataNasc")]
+        [BsonElement("dataNasc")]
         public DateTime DataNasc { get; set; }
         [BsonElement("cpf")]
         public string cpf { get; set; }

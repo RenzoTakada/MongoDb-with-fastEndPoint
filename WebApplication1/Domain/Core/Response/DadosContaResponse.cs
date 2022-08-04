@@ -12,6 +12,7 @@ namespace Domain.Core.Response
         public DateTime DataNasc { get; set; }
         public string cpf { get; set; }
         public EnumTipoConta tipoConta { get; set; }
+        public string nomeEmpresa { get; set; }
 
 
 
